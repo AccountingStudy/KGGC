@@ -8,14 +8,20 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
+            background-image: url('https://via.placeholder.com/1920x1080'); /* 도시적인 배경 이미지 URL */
+            background-size: cover;
+            background-attachment: fixed;
+            color: #ffffff;
         }
         .container {
             width: 80%;
             margin: auto;
             overflow: hidden;
+            background: rgba(0, 0, 0, 0.7); /* 반투명한 배경색 */
+            padding: 20px;
+            border-radius: 10px;
         }
         header {
             background: #35424a;
@@ -23,6 +29,17 @@
             padding-top: 30px;
             min-height: 70px;
             border-bottom: #e8491d 3px solid;
+            position: relative;
+        }
+        header h1 {
+            display: inline;
+        }
+        header .trademark {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 24px;
+            font-weight: bold;
         }
         header a {
             color: #ffffff;
@@ -38,13 +55,8 @@
             display: inline;
             padding: 0 20px 0 20px;
         }
-        .main-content {
-            background: #ffffff;
-            padding: 20px;
-            margin-top: 20px;
-        }
         .main-content h2 {
-            color: #35424a;
+            color: #e8491d;
         }
         .footer {
             background: #35424a;
@@ -52,12 +64,14 @@
             text-align: center;
             padding: 10px;
             margin-top: 20px;
+            border-radius: 10px;
         }
         ul {
             list-style-type: none;
+            padding-left: 0;
         }
         ul li a {
-            color: #35424a;
+            color: #e8491d;
             text-decoration: none;
             font-weight: bold;
         }
@@ -70,14 +84,7 @@
     <header>
         <div class="container">
             <h1>Accounting Study</h1>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
+            <div class="trademark">KGGC</div>
         </div>
     </header>
     <div class="container main-content">
