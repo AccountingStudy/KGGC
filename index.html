@@ -63,11 +63,14 @@
             background-position: center;
             color: #fff;
             scroll-snap-align: start;
+            position: relative;
+            background: rgba(0, 0, 0, 0.5);
         }
         section h2 {
             color: #fff;
             font-size: 2rem;
             margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
         .standard-list {
             display: flex;
@@ -81,7 +84,7 @@
         .standard-list .column a {
             display: block;
             padding: 0.5rem 0;
-            color: #333;
+            color: #fff;
             text-decoration: none;
             border-bottom: 1px solid #ccc;
             transition: all 0.3s ease;
@@ -91,11 +94,13 @@
             border-bottom: 1px solid #007BFF;
         }
         .content {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.5);
             color: #333;
             padding: 2rem;
             border-radius: 0.5rem;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
         }
         .content h3 {
             margin-top: 0;
@@ -126,6 +131,18 @@
         html, body {
             scroll-snap-type: y mandatory;
         }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+        .background {
+            opacity: 0.5;
+        }
     </style>
     <script>
         window.onbeforeunload = function () {
@@ -152,6 +169,7 @@
     </header>
     <div class="container main-content">
         <section id="section1" style="background-image: url('https://images.unsplash.com/photo-1529429613072-1d5b65a2d3b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDN8fGZpbmFuY2V8fDB8fHx8MTYyNTU3ODk3MA&ixlib=rb-1.2.1&q=80&w=1080');">
+            <div class="overlay"></div>
             <h2>회계심사 감리 주요 지적사례 (출처: 금융감독원 2024.5)</h2>
             <div class="standard-list">
                 <div class="column">
@@ -162,7 +180,8 @@
                 </div>
             </div>
         </section>
-        <section id="section2" style="background-image: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGZpbmFuY2V8fDB8fHx8MTYyNTU3ODk3MA&ixlib=rb-1.2.1&q=80&w=1080');">
+        <section id="section2" style="background-image: url('https://images.unsplash.com/photo-1509358278150-b79f654da9d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDEyfHxmaW5hbmNlfGVufDB8fHx8MTYyNTU3ODk3MA&ixlib=rb-1.2.1&q=80&w=1080');">
+            <div class="overlay"></div>
             <div class="content">
                 <h2>회계기준 K-IFRS</h2>
                 <div class="standard-list">
@@ -179,6 +198,8 @@
                         <a href="https://github.com/AccountingStudy/K-ifrs/blob/main/시행중_K-IFRS_제1020호_정부보조금의_회계처리와_정부지원의_공시(2008_개정_2015_타기준서_제정_수정목록_23-1_2020_구성양식_변경_반영).pdf">K-IFRS 제1020호: 정부보조금의 회계처리와 정부지원의 공시</a>
                         <a href="https://github.com/AccountingStudy/K-ifrs/blob/main/시행중_K-IFRS_제1021호_환율변동효과(2010_개정_2018_타기준서_개정_수정목록_23-1_2020_구성양식_변경_반영).pdf">K-IFRS 제1021호: 환율변동효과</a>
                         <a href="https://github.com/AccountingStudy/K-ifrs/blob/main/시행중_K-IFRS_제1023호_차입원가(2018_개정_2017_타기준서_제정_수정목록_23-1_2020_구성양식_변경_반영).pdf">K-IFRS 제1023호: 차입원가</a>
+                    </div>
+                    <div class="column">
                         <a href="https://github.com/AccountingStudy/K-ifrs/blob/main/시행중_K-IFRS_제1024호_특수관계자공시(2014_개정_2013_타기준서_개정_수정목록_19-1_2020_구성양식_변경_반영).pdf">K-IFRS 제1024호: 특수관계자 공시</a>
                         <a href="https://github.com/AccountingStudy/K-ifrs/blob/main/시행중_K-IFRS_제1026호_퇴직급여제도에_의한_회계처리와_보고(2007_제정_2021_타기준서_개정_수정목록_23-1_2020_구성양식_변경_반영).pdf">K-IFRS 제1026호: 퇴직급여제도에 의한 회계처리와 보고</a>
                         <a href="https://github.com/AccountingStudy/K-ifrs/blob/main/시행중_K-IFRS_제1027호_별도재무제표(2014_개정_2015_타기준서_제정_수정목록_21-1_2020_구성양식_변경_반영).pdf">K-IFRS 제1027호: 별도재무제표</a>
@@ -188,14 +209,14 @@
                         <a href="https://github.com/AccountingStudy/K-ifrs/blob/main/시행중_K-IFRS_제1033호_주당이익(2007_제정_2015_타기준서_제정_수정목록_23-1_2020_구성양식_변경_반영).pdf">K-IFRS 제1033호: 주당이익</a>
                         <a href="https://github.com/AccountingStudy/K-ifrs/blob/main/시행중_K-IFRS_제1034호_중간재무보고(2015_개정_2021_타기준서_개정_수정목록_23-1_2021_구성양식_변경_반영).pdf">K-IFRS 제1034호: 중간재무보고</a>
                         <a href="https://github.com/AccountingStudy/K-ifrs/blob/main/시행중_K-IFRS_제1036호_자산손상(2015_개정_2021_타기준서_제정_수정목록_23-1_2020_구성양식_변경_반영).pdf">K-IFRS 제1036호: 자산손상</a>
-                    </div>
-                    <div class="column">
                         <a href="https://github.com/AccountingStudy/K-ifrs/blob/main/시행중_K-IFRS_제1037호_충당부채_우발부채_우발자산(2020_개정_2021_타기준서_제정_수정목록_23-1_2020_구성양식_변경_반영).pdf">K-IFRS 제1037호: 충당부채, 우발부채 및 우발자산</a>
                         <a href="https://github.com/AccountingStudy/K-ifrs/blob/main/시행중_K-IFRS_제1038호_무형자산(2014_개정_2021_타기준서_제정_수정목록_23-1_2020_구성양식_변경_반영).pdf">K-IFRS 제1038호: 무형자산</a>
                         <a href="https://github.com/AccountingStudy/K-ifrs/blob/main/시행중_K-IFRS_제1039호_금융상품_인식과_측정(2020_개정_2017_타기준서_제정_수정목록_23-1_2020_구성양식_변경_반영).pdf">K-IFRS 제1039호: 금융상품: 인식과 측정</a>
                         <a href="https://github.com/AccountingStudy/K-ifrs/blob/main/시행중_K-IFRS_제1040호_투자부동산(2017_개정_2021_타기준서_제정_수정목록_19-1__19-2_2020_구성양식_변경_반영).pdf">K-IFRS 제1040호: 투자부동산</a>
                         <a href="https://github.com/AccountingStudy/K-ifrs/blob/main/시행중_K-IFRS_제1041호_농림어업(2020_개정_2018_타기준서_개정_수정목록_20-1_2020_구성양식_변경_반영).pdf">K-IFRS 제1041호: 농림어업</a>
                         <a href="https://github.com/AccountingStudy/K-ifrs/blob/main/시행중_K-IFRS_제1101호_한국채택국제회계기준의_최초채택(2020_개정_2021_타기준서_개정_수정목록_22-1_2020_구성양식_변경_반영).pdf">K-IFRS 제1101호: 한국채택국제회계기준의 최초채택</a>
+                    </div>
+                    <div class="column">
                         <a href="https://github.com/AccountingStudy/K-ifrs/blob/main/시행중_K-IFRS_제1102호_주식기준보상(2016_개정_2019_타기준서_개정_수정목록_23-1_2020_구성양식_변경_반영).pdf">K-IFRS 제1102호: 주식기준보상</a>
                         <a href="https://github.com/AccountingStudy/K-ifrs/blob/main/시행중_K-IFRS_제1103호_사업결합(2020_개정_2021_타기준서_제정_수정목록_20-1_2020_구성양식_변경_반영).pdf">K-IFRS 제1103호: 사업결합</a>
                         <a href="https://github.com/AccountingStudy/K-ifrs/blob/main/시행중_K-IFRS_제1105호_매각예정비유동자산과_중단영업(2015_개정_2021_타기준서_제정_수정목록_23-1_2020_구성양식_변경_반영).pdf">K-IFRS 제1105호: 매각예정비유동자산과 중단영업</a>
@@ -234,7 +255,8 @@
                 </div>
             </div>
         </section>
-        <section id="section3" style="background-image: url('https://images.unsplash.com/photo-1534353215531-36ab9c9b5d1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDh8fGZpbmFuY2V8fDB8fHx8MTYyNTU3ODk3MA&ixlib=rb-1.2.1&q=80&w=1080');">
+        <section id="section3" style="background-image: url('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGZpbmFuY2V8fDB8fHx8MTYyNTU3ODk3MA&ixlib=rb-1.2.1&q=80&w=1080');">
+            <div class="overlay"></div>
             <div class="content">
                 <h2>재무회계개념체계</h2>
                 <div class="standard-list">
@@ -284,19 +306,22 @@
                 </div>
             </div>
         </section>
-        <section id="section4" style="background-image: url('https://images.unsplash.com/photo-1521702817414-99cb5109e273?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGJ1c2luZXNzfGVufDB8fHx8MTYyNTU3ODk3MA&ixlib=rb-1.2.1&q=80&w=1080');">
+        <section id="section4" style="background-image: url('https://images.unsplash.com/photo-1564866657310-cc49a0f05f3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDR8fGZpbmFuY2V8fDB8fHx8MTYyNTU3ODk3MA&ixlib=rb-1.2.1&q=80&w=1080');">
+            <div class="overlay"></div>
             <div class="content">
                 <h2>질의회신 (K-IFRS)</h2>
                 <!-- 추가할 내용 -->
             </div>
         </section>
-        <section id="section5" style="background-image: url('https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDh8fGZpbmFuY2V8fDB8fHx8MTYyNTU3ODk3MA&ixlib=rb-1.2.1&q=80&w=1080');">
+        <section id="section5" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDV8fGZpbmFuY2V8fDB8fHx8MTYyNTU3ODk3MA&ixlib=rb-1.2.1&q=80&w=1080');">
+            <div class="overlay"></div>
             <div class="content">
                 <h2>질의회신 (금융감독원)</h2>
                 <!-- 추가할 내용 -->
             </div>
         </section>
-        <section id="section6" style="background-image: url('https://images.unsplash.com/photo-1534353215531-36ab9c9b5d1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDh8fGZpbmFuY2V8fDB8fHx8MTYyNTU3ODk3MA&ixlib=rb-1.2.1&q=80&w=1080');">
+        <section id="section6" style="background-image: url('https://images.unsplash.com/photo-1515162305280-780c890fd66e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDZ8fGZpbmFuY2V8fDB8fHx8MTYyNTU3ODk3MA&ixlib=rb-1.2.1&q=80&w=1080');">
+            <div class="overlay"></div>
             <div class="content">
                 <h2>검토중인사항</h2>
                 <!-- 추가할 내용 -->
