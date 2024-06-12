@@ -57,7 +57,7 @@
             text-decoration: underline;
         }
         section {
-            padding: 6rem 2rem 2rem; /* Adjusted padding to account for fixed header */
+            padding: 6rem 2rem 2rem;
             min-height: 100vh;
             background-size: cover;
             background-position: center;
@@ -105,6 +105,30 @@
             text-align: center;
             padding: 1rem 0;
         }
+        .content {
+            background: #fff;
+            color: #333;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .content h3 {
+            margin-top: 0;
+        }
+        .content ul {
+            list-style: none;
+            padding: 0;
+        }
+        .content ul li {
+            padding: 0.5rem 0;
+        }
+        .content ul li a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .content ul li a:hover {
+            text-decoration: underline;
+        }
     </style>
     <script>
         window.onbeforeunload = function () {
@@ -130,7 +154,7 @@
         </div>
     </header>
     <div class="container main-content">
-        <section id="section1" style="background-image: url('https://images.unsplash.com/photo-1529429613072-1d5b65a2d3b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDN8fGZpbmFuY2V8fDB8fHx8MTYyNTU3ODk3MA&ixlib=rb-1.2.1&q=80&w=1080');">
+        <section id="section1" style="background-image: url('https://images.unsplash.com/photo-1529429613072-1d5b65a2d3b9');">
             <h2>회계심사 감리 주요 지적사례 (출처: 금융감독원 2024.5)</h2>
             <ul>
                 <li><a href="제1장 매출, 매출원가 수익인식.md">제1장 매출, 매출원가 수익인식</a></li>
@@ -139,31 +163,37 @@
                 <li><a href="제4장 기타자산부채.md">제4장 기타자산부채</a></li>
             </ul>
         </section>
-        <section id="section2" style="background-image: url('https://images.unsplash.com/photo-1593642532400-2682810df593?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDd8fGZpbmFuY2V8fDB8fHx8MTYyNTU3ODk3MA&ixlib=rb-1.2.1&q=80&w=1080');">
-            <h2>회계기준 K-IFRS (출처: 한국회계기준원 2024.5)</h2>
-            <ul>
-                <li><a href="1001호.md">1001호</a></li>
-            </ul>
+        <section id="section2">
+            <div class="content">
+                <h2>회계기준 K-IFRS (출처: 한국회계기준원 2024.5)</h2>
+                <h3>기준목록</h3>
+                <ul>
+                    <li><a href="https://db.kasb.or.kr/standard/viewer/1">K-IFRS 제1001호</a></li>
+                    <li><a href="https://db.kasb.or.kr/standard/viewer/2">K-IFRS 제1002호</a></li>
+                    <li><a href="https://db.kasb.or.kr/standard/viewer/3">K-IFRS 제1003호</a></li>
+                    <li><a href="https://db.kasb.or.kr/standard/viewer/4">K-IFRS 제1004호</a></li>
+                </ul>
+            </div>
         </section>
-        <section id="section3" style="background-image: url('https://images.unsplash.com/photo-1565517976181-529c3b6d41c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGVjb25vbXl8fDB8fHx8MTYyNTU3ODk3Mg&ixlib=rb-1.2.1&q=80&w=1080');">
+        <section id="section3" style="background-image: url('https://images.unsplash.com/photo-1565517976181-529c3b6d41c6');">
             <h2>회계기준 K-GAAP (출처: 한국회계기준원 2024.5)</h2>
             <ul>
                 <li><a href="1001호.md">1001호</a></li>
             </ul>
         </section>
-        <section id="section4" style="background-image: url('https://images.unsplash.com/photo-1542744095-291d1f67b221?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGVjb25vbXl8fDB8fHx8MTYyNTU3ODk3Mg&ixlib=rb-1.2.1&q=80&w=1080');">
+        <section id="section4" style="background-image: url('https://images.unsplash.com/photo-1542744095-291d1f67b221');">
             <h2>질의회신 (출처: 한국회계기준원 2024.5)</h2>
             <ul>
                 <li><a href="1001호.md">1001호</a></li>
             </ul>
         </section>
-        <section id="section5" style="background-image: url('https://images.unsplash.com/photo-1599499450607-14aad9b5f7c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDd8fGVjb25vbXl8fDB8fHx8MTYyNTU3ODk3Mg&ixlib=rb-1.2.1&q=80&w=1080');">
+        <section id="section5" style="background-image: url('https://images.unsplash.com/photo-1599499450607-14aad9b5f7c9');">
             <h2>질의회신 (출처: 금융감독원회계포탈 2024.5)</h2>
             <ul>
                 <li><a href="1001호.md">1001호</a></li>
             </ul>
         </section>
-        <section id="section6" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDIwfHxmaW5hbmNlfGVufDB8fHx8MTYyNTU3ODk3Mg&ixlib=rb-1.2.1&q=80&w=1080');">
+        <section id="section6" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d');">
             <h2>검토중인사항 (출처: 각 항목 취합)</h2>
             <ul>
                 <li><a href="1001호.md">1001호</a></li>
