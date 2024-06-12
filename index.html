@@ -64,7 +64,7 @@
             color: #fff;
         }
         section h2 {
-            color: #333;
+            color: #fff;
             font-size: 2rem;
             margin-bottom: 1rem;
         }
@@ -73,37 +73,26 @@
             line-height: 1.6;
             margin-bottom: 2rem;
         }
-        section ul {
-            list-style: none;
-            padding: 0;
+        .standard-list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            color: #333;
         }
-        section ul li {
-            margin-bottom: 1rem;
+        .standard-list .column {
+            width: 30%;
         }
-        section ul li ul {
-            padding-left: 1rem;
-        }
-        section ul li a {
+        .standard-list .column a {
+            display: block;
+            padding: 0.5rem 0;
             color: #333;
             text-decoration: none;
-            font-weight: bold;
-            display: block;
-            padding: 0.5rem 1rem;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid #ccc;
             transition: all 0.3s ease;
         }
-        section ul li a:hover {
-            background: #007BFF;
-            color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
-        }
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
+        .standard-list .column a:hover {
+            color: #007BFF;
+            border-bottom: 1px solid #007BFF;
         }
         .content {
             background: #fff;
@@ -123,24 +112,26 @@
             padding: 0.5rem 0;
         }
         .content ul li a {
-            color: #007BFF;
+            color: #333;
             text-decoration: none;
+            border-bottom: 1px solid #ccc;
+            transition: all 0.3s ease;
         }
         .content ul li a:hover {
-            text-decoration: underline;
+            color: #007BFF;
+            border-bottom: 1px solid #007BFF;
         }
-        .standard-list {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            color: #333;
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
         }
-        .standard-list .column {
-            width: 30%;
+        html, body {
+            scroll-snap-type: y mandatory;
         }
-        .standard-list .column a {
-            display: block;
-            padding: 0.5rem 0;
+        section {
+            scroll-snap-align: start;
         }
     </style>
     <script>
@@ -158,7 +149,7 @@
                 <ul>
                     <li><a href="#section1">주요 지적사례</a></li>
                     <li><a href="#section2">회계기준 K-IFRS</a></li>
-                    <li><a href="#section3">회계기준 K-GAAP</a></li>
+                    <li><a href="#section3">재무회계개념체계</a></li>
                     <li><a href="#section4">질의회신 (K-IFRS)</a></li>
                     <li><a href="#section5">질의회신 (금융감독원)</a></li>
                     <li><a href="#section6">검토중인사항</a></li>
@@ -167,7 +158,7 @@
         </div>
     </header>
     <div class="container main-content">
-        <section id="section1" style="background-image: url('https://images.unsplash.com/photo-1529429613072-1d5b65a2d3b9');">
+        <section id="section1" style="background-image: url('https://images.unsplash.com/photo-1529429613072-1d5b65a2d3b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDN8fGZpbmFuY2V8fDB8fHx8MTYyNTU3ODk3MA&ixlib=rb-1.2.1&q=80&w=1080');">
             <h2>회계심사 감리 주요 지적사례 (출처: 금융감독원 2024.5)</h2>
             <ul>
                 <li><a href="제1장 매출, 매출원가 수익인식.md">제1장 매출, 매출원가 수익인식</a></li>
@@ -178,7 +169,7 @@
         </section>
         <section id="section2">
             <div class="content">
-                <h2>기준목록</h2>
+                <h2>회계기준 K-IFRS</h2>
                 <div class="standard-list">
                     <div class="column">
                         <a href="#">재무보고를 위한 개념체계</a>
@@ -252,25 +243,67 @@
                 </div>
             </div>
         </section>
-        <section id="section3" style="background-image: url('https://images.unsplash.com/photo-1565517976181-529c3b6d41c6');">
-            <h2>회계기준 K-GAAP (출처: 한국회계기준원 2024.5)</h2>
-            <ul>
-                <li><a href="1001호.md">1001호</a></li>
-            </ul>
+        <section id="section3">
+            <div class="content">
+                <h2>재무회계개념체계</h2>
+                <div class="standard-list">
+                    <div class="column">
+                        <a href="#">목적, 구성 및 적용</a>
+                        <a href="#">재무제표의 작성과 표시Ⅰ</a>
+                        <a href="#">재무제표의 작성과 표시Ⅱ</a>
+                        <a href="#">연결재무제표</a>
+                        <a href="#">회계정책, 회계추정의 변경 및 오류</a>
+                        <a href="#">금융자산·금융부채</a>
+                        <a href="#">재고자산</a>
+                        <a href="#">지분법</a>
+                        <a href="#">조인트벤처 투자</a>
+                        <a href="#">유형자산</a>
+                        <a href="#">무형자산</a>
+                        <a href="#">사업결합</a>
+                        <a href="#">리스</a>
+                        <a href="#">충당부채, 우발부채 및 우발자산</a>
+                        <a href="#">자본</a>
+                        <a href="#">수익</a>
+                        <a href="#">정부보조금의 회계처리</a>
+                        <a href="#">차입원가자본화</a>
+                        <a href="#">주식기준보상</a>
+                        <a href="#">자산손상</a>
+                    </div>
+                    <div class="column">
+                        <a href="#">종업원급여</a>
+                        <a href="#">법인세회계</a>
+                        <a href="#">환율변동효과</a>
+                        <a href="#">보고기간후사건</a>
+                        <a href="#">특수관계자 공시</a>
+                        <a href="#">기본주당이익</a>
+                        <a href="#">특수활동</a>
+                        <a href="#">중단사업</a>
+                        <a href="#">중간재무제표</a>
+                        <a href="#">일반기업회계기준의 최초채택</a>
+                        <a href="#">중소기업 회계처리 특례</a>
+                        <a href="#">동일지배거래</a>
+                        <a href="#">온실가스 배출권과 배출부채</a>
+                        <a href="#">시행일 및 경과규정</a>
+                        <a href="#">보험업회계처리준칙</a>
+                        <a href="#">해석【56-90】임대주택건설사업자의 임대후분양주택에 관한 회계처리</a>
+                        <a href="#">일반기업회계기준 재무제표 영문양식</a>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section id="section4" style="background-image: url('https://images.unsplash.com/photo-1542744095-291d1f67b221');">
+        <section id="section4" style="background-image: url('https://images.unsplash.com/photo-1542744095-291d1f67b221?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDEwfHxibG9nfHx8fHx8MTYyNTU3ODk3MA&ixlib=rb-1.2.1&q=80&w=1080');">
             <h2>질의회신 (출처: 한국회계기준원 2024.5)</h2>
             <ul>
                 <li><a href="1001호.md">1001호</a></li>
             </ul>
         </section>
-        <section id="section5" style="background-image: url('https://images.unsplash.com/photo-1599499450607-14aad9b5f7c9');">
+        <section id="section5" style="background-image: url('https://images.unsplash.com/photo-1599499450607-14aad9b5f7c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDd8fGVjb25vbXl8fDB8fHx8MTYyNTU3ODk3MA&ixlib=rb-1.2.1&q=80&w=1080');">
             <h2>질의회신 (출처: 금융감독원회계포탈 2024.5)</h2>
             <ul>
                 <li><a href="1001호.md">1001호</a></li>
             </ul>
         </section>
-        <section id="section6" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d');">
+        <section id="section6" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDEwfHxibG9nfHx8fHx8MTYyNTU3ODk3MA&ixlib=rb-1.2.1&q=80&w=1080');">
             <h2>검토중인사항 (출처: 각 항목 취합)</h2>
             <ul>
                 <li><a href="1001호.md">1001호</a></li>
