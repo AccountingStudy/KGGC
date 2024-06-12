@@ -59,15 +59,12 @@
         section {
             padding: 6rem 2rem 2rem; /* Adjusted padding to account for fixed header */
             min-height: 100vh;
-        }
-        section:nth-of-type(odd) {
-            background: #f4f4f4;
-        }
-        section:nth-of-type(even) {
-            background: #e9e9e9;
+            background-size: cover;
+            background-position: center;
+            color: #fff;
         }
         section h2 {
-            color: #333;
+            color: #fff;
             font-size: 2rem;
             margin-bottom: 1rem;
         }
@@ -87,12 +84,12 @@
             padding-left: 1rem;
         }
         section ul li a {
-            color: #333;
+            color: #fff;
             text-decoration: none;
             font-weight: bold;
             display: block;
             padding: 0.5rem 1rem;
-            background: #fff;
+            background: rgba(0, 0, 0, 0.5);
             border-radius: 0.5rem;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
@@ -128,7 +125,7 @@
         </div>
     </header>
     <div class="container main-content">
-        <section id="section1">
+        <section id="section1" style="background-image: url('URL_TO_IMAGE1');">
             <h2>회계심사 감리 주요 지적사례 (출처: 금융감독원 2024.5)</h2>
             <ul>
                 <li><a href="제1장 매출, 매출원가 수익인식.md">제1장 매출, 매출원가 수익인식</a></li>
@@ -137,31 +134,31 @@
                 <li><a href="제4장 기타자산부채.md">제4장 기타자산부채</a></li>
             </ul>
         </section>
-        <section id="section2">
+        <section id="section2" style="background-image: url('URL_TO_IMAGE2');">
             <h2>회계기준 K-IFRS (출처: 한국회계기준원 2024.5)</h2>
             <ul>
                 <li><a href="1001호.md">1001호</a></li>
             </ul>
         </section>
-        <section id="section3">
+        <section id="section3" style="background-image: url('URL_TO_IMAGE3');">
             <h2>회계기준 K-GAAP (출처: 한국회계기준원 2024.5)</h2>
             <ul>
                 <li><a href="1001호.md">1001호</a></li>
             </ul>
         </section>
-        <section id="section4">
+        <section id="section4" style="background-image: url('URL_TO_IMAGE4');">
             <h2>질의회신 (출처: 한국회계기준원 2024.5)</h2>
             <ul>
                 <li><a href="1001호.md">1001호</a></li>
             </ul>
         </section>
-        <section id="section5">
+        <section id="section5" style="background-image: url('URL_TO_IMAGE5');">
             <h2>질의회신 (출처: 금융감독원회계포탈 2024.5)</h2>
             <ul>
                 <li><a href="1001호.md">1001호</a></li>
             </ul>
         </section>
-        <section id="section6">
+        <section id="section6" style="background-image: url('URL_TO_IMAGE6');">
             <h2>검토중인사항 (출처: 각 항목 취합)</h2>
             <ul>
                 <li><a href="1001호.md">1001호</a></li>
@@ -173,5 +170,6 @@
     </footer>
 </body>
 </html>
+
 
 
