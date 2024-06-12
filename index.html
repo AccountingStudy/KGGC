@@ -62,16 +62,12 @@
             background-size: cover;
             background-position: center;
             color: #fff;
+            scroll-snap-align: start;
         }
         section h2 {
             color: #fff;
             font-size: 2rem;
             margin-bottom: 1rem;
-        }
-        section p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 2rem;
         }
         .standard-list {
             display: flex;
@@ -130,9 +126,6 @@
         html, body {
             scroll-snap-type: y mandatory;
         }
-        section {
-            scroll-snap-align: start;
-        }
     </style>
     <script>
         window.onbeforeunload = function () {
@@ -158,14 +151,16 @@
         </div>
     </header>
     <div class="container main-content">
-        <section id="section1" style="background-image: url('https://images.unsplash.com/photo-1529429613072-1d5b65a2d3b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDN8fGZpbmFuY2V8fDB8fHx8MTYyNTU3ODk3MA&ixlib=rb-1.2.1&q=80&w=1080');">
+        <section id="section1" style="background-image: url('https://images.unsplash.com/photo-1529429613072-1d5b65a2d3b9');">
             <h2>회계심사 감리 주요 지적사례 (출처: 금융감독원 2024.5)</h2>
-            <ul>
-                <li><a href="제1장 매출, 매출원가 수익인식.md">제1장 매출, 매출원가 수익인식</a></li>
-                <li><a href="제2장 중속관계회사투자주식.md">제2장 중속관계회사투자주식</a></li>
-                <li><a href="제3장 재고자산및유형자산.md">제3장 재고자산및유형자산</a></li>
-                <li><a href="제4장 기타자산부채.md">제4장 기타자산부채</a></li>
-            </ul>
+            <div class="standard-list">
+                <div class="column">
+                    <a href="제1장 매출, 매출원가 수익인식.md">제1장 매출, 매출원가 수익인식</a>
+                    <a href="제2장 중속관계회사투자주식.md">제2장 중속관계회사투자주식</a>
+                    <a href="제3장 재고자산및유형자산.md">제3장 재고자산및유형자산</a>
+                    <a href="제4장 기타자산부채.md">제4장 기타자산부채</a>
+                </div>
+            </div>
         </section>
         <section id="section2">
             <div class="content">
@@ -291,19 +286,19 @@
                 </div>
             </div>
         </section>
-        <section id="section4" style="background-image: url('https://images.unsplash.com/photo-1542744095-291d1f67b221?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDEwfHxibG9nfHx8fHx8MTYyNTU3ODk3MA&ixlib=rb-1.2.1&q=80&w=1080');">
+        <section id="section4" style="background-image: url('https://images.unsplash.com/photo-1542744095-291d1f67b221');">
             <h2>질의회신 (출처: 한국회계기준원 2024.5)</h2>
             <ul>
                 <li><a href="1001호.md">1001호</a></li>
             </ul>
         </section>
-        <section id="section5" style="background-image: url('https://images.unsplash.com/photo-1599499450607-14aad9b5f7c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDd8fGVjb25vbXl8fDB8fHx8MTYyNTU3ODk3MA&ixlib=rb-1.2.1&q=80&w=1080');">
+        <section id="section5" style="background-image: url('https://images.unsplash.com/photo-1599499450607-14aad9b5f7c9');">
             <h2>질의회신 (출처: 금융감독원회계포탈 2024.5)</h2>
             <ul>
                 <li><a href="1001호.md">1001호</a></li>
             </ul>
         </section>
-        <section id="section6" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDEwfHxibG9nfHx8fHx8MTYyNTU3ODk3MA&ixlib=rb-1.2.1&q=80&w=1080');">
+        <section id="section6" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d');">
             <h2>검토중인사항 (출처: 각 항목 취합)</h2>
             <ul>
                 <li><a href="1001호.md">1001호</a></li>
