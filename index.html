@@ -70,7 +70,7 @@
             border-radius: 0.25rem;
         }
         section {
-            padding: 12rem 2rem 4rem; /* Adjusted padding-top */
+            padding: 8rem 2rem 4rem;
             min-height: 100vh;
             background-size: cover;
             background-position: center;
@@ -80,32 +80,48 @@
         }
         section h2 {
             color: #fff;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            font-size: 1.5rem;
+            margin: 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
             background-color: rgba(0, 0, 0, 0.6);
-            padding: 0.75rem;
+            padding: 0.5rem;
             border-radius: 0.5rem;
-            text-align: center;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
         }
         .standard-list {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
             color: #333;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
         }
         .standard-list .column {
             width: 30%;
         }
-        .standard-list .column a {
-            display: block;
+        .standard-list .column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .standard-list .column ul li {
             padding: 0.5rem 0;
+            border-bottom: 1px solid #ccc;
+        }
+        .standard-list .column ul li:last-child {
+            border-bottom: none;
+        }
+        .standard-list .column ul li a {
             color: #333;
             text-decoration: none;
-            border-bottom: 1px solid #ccc;
             transition: all 0.3s ease;
         }
-        .standard-list .column a:hover {
+        .standard-list .column ul li a:hover {
             color: #1a73e8;
             border-bottom: 1px solid #1a73e8;
         }
@@ -117,6 +133,7 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             position: relative;
             z-index: 1;
+            margin-top: 2rem;
         }
         .content ul {
             list-style: none;
@@ -189,7 +206,83 @@
         <section id="about" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fit=crop&w=1080&q=80');">
             <div class="content">
                 <h2>기준서</h2>
-                <p>여기에 회계사 소개, 자격증, 경력 등을 포함합니다.</p>
+                <div class="standard-list">
+                    <div class="column">
+                        <ul>
+                            <li>재무보고를 위한 개념체계</li>
+                            <li>1001 재무제표 표시</li>
+                            <li>1002 재고자산</li>
+                            <li>1007 현금흐름표</li>
+                            <li>1008 회계정책, 회계추정치 변경과 오류</li>
+                            <li>1010 보고기간후사건</li>
+                            <li>1012 법인세</li>
+                            <li>1016 유형자산</li>
+                            <li>1019 종업원급여</li>
+                            <li>1020 정부보조금의 회계처리와 정부지원의 공시</li>
+                            <li>1021 환율변동효과</li>
+                            <li>1023 차입원가</li>
+                            <li>1024 특수관계자 공시</li>
+                            <li>1026 퇴직급여제도에 의한 회계처리와 보고</li>
+                            <li>1027 별도재무제표</li>
+                            <li>1028 관계기업과 공동기업에 대한 투자</li>
+                            <li>1029 초인플레이션 경제에서의 재무보고</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <ul>
+                            <li>1032 금융상품: 표시</li>
+                            <li>1033 주당이익</li>
+                            <li>1034 중간재무보고</li>
+                            <li>1036 자산손상</li>
+                            <li>1037 충당부채, 우발부채, 우발자산</li>
+                            <li>1038 무형자산</li>
+                            <li>1039 금융상품: 인식과 측정</li>
+                            <li>1040 투자부동산</li>
+                            <li>1041 농림어업</li>
+                            <li>1101 한국채택국제회계기준의 최초채택</li>
+                            <li>1102 주식기준보상</li>
+                            <li>1103 사업결합</li>
+                            <li>1105 매각예정비유동자산과 중단영업</li>
+                            <li>1106 광물자원의 탐사와 평가</li>
+                            <li>1107 금융상품: 공시</li>
+                            <li>1108 영업부문</li>
+                            <li>1109 금융상품</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <ul>
+                            <li>1110 연결재무제표</li>
+                            <li>1111 공동약정</li>
+                            <li>1112 타 기업에 대한 지분의 공시</li>
+                            <li>1113 공정가치 측정</li>
+                            <li>1114 규제이연계정</li>
+                            <li>1115 고객과의 계약에서 생기는 수익</li>
+                            <li>1116 리스</li>
+                            <li>1117 보험계약</li>
+                            <li>2010 정부지원: 영업활동과 특정한 관련이 없는 경우</li>
+                            <li>2025 법인세: 기업이나 주주의 납세지위 변동</li>
+                            <li>2029 민간투자사업: 공시</li>
+                            <li>2032 무형자산: 웹 사이트 원가</li>
+                            <li>2101 사후처리 및 복구관련 충당부채의 변경</li>
+                            <li>2102 조합원 지분과 유사 지분</li>
+                            <li>2105 사후처리, 복구 및 환경정화를 위한 기금의 지분에 대한 권리</li>
+                            <li>2106 특정 시장에 참여함에 따라 발생하는 부채: 폐전기·전자제품</li>
+                            <li>2107 기업회계기준서 제1029호 '초인플레이션 경제에서의 재무보고'에서의 재작성 방법의 적용</li>
+                            <li>2110 중간재무보고와 손상</li>
+                            <li>2112 민간투자사업: 공시</li>
+                            <li>2114 기업회계기준서 제1019호: 확정급여자산한도, 최소적립요건 및 그 상호작용</li>
+                            <li>2116 해외사업장순투자의 위험회피</li>
+                            <li>2117 소유주에 대한 비현금자산의 분배</li>
+                            <li>2119 지분상품에 의한 금융부채의 소멸</li>
+                            <li>2120 노천광산 생산단계의 박토원가</li>
+                            <li>2121 부담금</li>
+                            <li>2122 외화 거래와 선지급·선수취 대가</li>
+                            <li>2123 법인세 처리의 불확실성</li>
+                            <li>경영진설명서 작성을 위한 개념체계 번역서</li>
+                            <li>중요성에 대한 판단 번역서</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
         <section id="blog">
