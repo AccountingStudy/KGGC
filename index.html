@@ -156,141 +156,20 @@
         window.onbeforeunload = function () {
             window.scrollTo(0, 0);
         }
-//마우스휠        
-let isScrolling = false;
-const scrollDuration = 800; // 스크롤 효과의 지속 시간
-const scrollThrottle = 100; // 스크롤 이벤트 간 최소 시간
-const sections = document.querySelectorAll('.section'); // 각 섹션의 클래스 이름을 지정
-
-window.addEventListener('wheel', function(event) {
-    if (!isScrolling) {
-        isScrolling = true;
-        const currentScroll = window.scrollY;
-        let targetScroll = currentScroll;
-
-        if (event.deltaY > 0) {
-            // 스크롤 다운
-            for (let section of sections) {
-                if (section.offsetTop > currentScroll) {
-                    targetScroll = section.offsetTop;
-                    break;
-                }
-            }
-        } else {
-            // 스크롤 업
-            for (let i = sections.length - 1; i >= 0; i--) {
-                if (sections[i].offsetTop < currentScroll) {
-                    targetScroll = sections[i].offsetTop;
-                    break;
-                }
-            }
-        }
-
-        window.scrollTo({
-            top: targetScroll,
-            left: 0,
-            behavior: 'smooth'
-        });
-
-        setTimeout(() => {
-            isScrolling = false;
-        }, scrollDuration + scrollThrottle);
-    }
-});
-
-window.addEventListener('scroll', function() {
-    clearTimeout(isScrolling);
-    isScrolling = setTimeout(() => {
-        const currentScroll = window.scrollY;
-        let closestSection = sections[0];
-
-        for (let section of sections) {
-            if (Math.abs(section.offsetTop - currentScroll) < Math.abs(closestSection.offsetTop - currentScroll)) {
-                closestSection = section;
-            }
-        }
-
-        window.scrollTo({
-            top: closestSection.offsetTop,
-            left: 0,
-            behavior: 'smooth'
-        });
-    }, scrollThrottle);
-});
-    </script>
 </head>
 <body>
     <header>
         <div class="container">
             <h1>Accounting Study</h1>
-            <div class="trademark">KGGC</div>
-            <nav>
-                <ul>
-                    <li><a href="#section1">주요 지적사례</a></li>
-                    <li><a href="#section2">회계기준 K-IFRS</a></li>
-                    <li><a href="#section3">재무회계개념체계</a></li>
-                    <li><a href="#section4">질의회신 (K-IFRS)</a></li>
-                    <li><a href="#section5">질의회신 (금융감독원)</a></li>
-                    <li><a href="#section6">검토중인사항</a></li>
-                </ul>
-            </nav>
+            <div class="trademark">KGGC
         </div>
     </header>
     <div class="container main-content">
         <section id="section1" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fit=crop&w=1080&q=80');">
-            <h2>회계심사 감리 주요 지적사례 (출처: 금융감독원 2024.5)</h2>
-            <div class="standard-list">
-                <div class="column">
-                    <a href="https://github.com/AccountingStudy/K-ifrs/blob/main/제1장_매출_매출원가_수익인식.md">제1장 매출, 매출원가 수익인식</a>
-                    <a href="https://github.com/AccountingStudy/K-ifrs/blob/main/제2장_중속관계회사투자주식.md">제2장 중속관계회사투자주식</a>
-                    <a href="https://github.com/AccountingStudy/K-ifrs/blob/main/제3장_재고자산및유형자산.md">제3장 재고자산및유형자산</a>
-                    <a href="https://github.com/AccountingStudy/K-ifrs/blob/main/제4장_기타자산부채.md">제4장 기타자산부채</a>
+            <a href="https://db.kasb.or.kr/standard/">K-IFRS</a>
                 </div>
             </div>
-        </section>
-        <section id="section2" style="background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?fit=crop&w=1080&q=80');">
-            <div class="content">
-                <h2>회계기준 K-IFRS</h2>
-                <div class="standard-list">
-                     <div class="column">
-                <a href="https://db.kasb.or.kr/s/1000/cBGbRE">재무보고를 위한 개념체계</a>
-            </div>
-                    <div class="column">
-                        <a href="https://github.com/AccountingStudy/K-ifrs/blob/main/시행중_K-IFRS_제1024호_특수관계자공시(2014_개정_2013_타기준서_개정_수정목록_19-1_2020_구성양식_변경_반영).pdf">특수관계자 공시</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="section3" style="background-image: url('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?fit=crop&w=1080&q=80');">
-            <div class="content">
-                <h2>재무회계개념체계</h2>
-                <div class="standard-list">
-                    <div class="column">
-                        <a href="https://github.com/AccountingStudy/K-ifrs/blob/main/1장_목적_구성_및_적용.md">1장: 목적, 구성 및 적용</a>
-                        <a href="https://github.com/AccountingStudy/K-ifrs/blob/main/15장_자본.md">15장: 자본</a>
-                        <a href="https://github.com/AccountingStudy/K-ifrs/blob/main/30장_일반기업회계기준의_최초채택.md">30장: 일반기업회계기준의 최초채택</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="section4" style="background-image: url('/mnt/data/그림1.JPG');">
-            <div class="content">
-                <h2>질의회신 (K-IFRS)</h2>
-                <!-- 추가할 내용 -->
-            </div>
-        </section>
-        <section id="section5" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?fit=crop&w=1080&q=80');">
-            <div class="content">
-                <h2>질의회신 (금융감독원)</h2>
-                <!-- 추가할 내용 -->
-            </div>
-        </section>
-        <section id="section6" style="background-image: url('/mnt/data/그림2.JPG');">
-            <div class="content">
-                <h2>검토중인사항</h2>
-                <!-- 추가할 내용 -->
-            </div>
-        </section>
+        
     </div>
     <footer>
         <p>&copy; 2024 project KGGC</p>
