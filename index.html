@@ -158,17 +158,26 @@
         }
         
         // 마우스 휠 동작 변경
-        let scrollTimeout;
-        window.addEventListener('wheel', function(event) {
-            clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(() => {
-                if (event.deltaY > 0) {
-                    window.scrollBy({ top: window.innerHeight, left: 0, behavior: 'smooth' });
-                } else {
-                    window.scrollBy({ top: -window.innerHeight, left: 0, behavior: 'smooth' });
-                }
-            }, 100);
+       let isScrolling = false;
+const scrollDuration = 800; // 스크롤 효과의 지속 시간
+const scrollThrottle = 100; // 스크롤 이벤트 간 최소 시간
+
+window.addEventListener('wheel', function(event) {
+    if (!isScrolling) {
+        isScrolling = true;
+        const scrollAmount = event.deltaY > 0 ? window.innerHeight : -window.innerHeight;
+        
+        window.scrollBy({
+            top: scrollAmount,
+            left: 0,
+            behavior: 'smooth'
         });
+        
+        setTimeout(() => {
+            isScrolling = false;
+        }, scrollDuration + scrollThrottle);
+    }
+});
     </script>
 </head>
 <body>
