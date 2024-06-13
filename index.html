@@ -132,6 +132,11 @@
         html, body {
             scroll-snap-type: y mandatory;
         }
+        section img {
+            filter: brightness(1.2) blur(2px);
+            width: 100%;
+            height: auto;
+        }
         @media (max-width: 768px) {
             header .container {
                 flex-direction: column;
@@ -151,6 +156,19 @@
         window.onbeforeunload = function () {
             window.scrollTo(0, 0);
         }
+        
+        // 마우스 휠 동작 변경
+        let scrollTimeout;
+        window.addEventListener('wheel', function(event) {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                if (event.deltaY > 0) {
+                    window.scrollBy({ top: window.innerHeight, left: 0, behavior: 'smooth' });
+                } else {
+                    window.scrollBy({ top: -window.innerHeight, left: 0, behavior: 'smooth' });
+                }
+            }, 100);
+        });
     </script>
 </head>
 <body>
@@ -207,7 +225,7 @@
                 </div>
             </div>
         </section>
-        <section id="section4" style="background-image: url('https://images.unsplash.com/photo-1564866657310-cc49a0f05f3e?fit=crop&w=1080&q=80');">
+        <section id="section4" style="background-image: url('/mnt/data/그림1.JPG');">
             <div class="content">
                 <h2>질의회신 (K-IFRS)</h2>
                 <!-- 추가할 내용 -->
@@ -219,7 +237,7 @@
                 <!-- 추가할 내용 -->
             </div>
         </section>
-        <section id="section6" style="background-image: url('https://images.unsplash.com/photo-1515162305280-780c890fd66e?fit=crop&w=1080&q=80');">
+        <section id="section6" style="background-image: url('/mnt/data/그림2.JPG');">
             <div class="content">
                 <h2>검토중인사항</h2>
                 <!-- 추가할 내용 -->
