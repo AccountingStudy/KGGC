@@ -10,15 +10,15 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background: #f1f8e9;
+            background: #f4f4f9;
             color: #333;
             scroll-behavior: smooth;
         }
         header {
-            background: #0277bd;
+            background: #1a73e8;
             color: #fff;
             padding: 1rem 0;
-            box-shadow: 0 4px 2px -2px gray;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
             top: 0;
@@ -32,31 +32,41 @@
         }
         header h1 {
             margin: 0;
-            font-size: 1.5rem;
+            font-size: 1.75rem;
+            font-weight: 700;
         }
         header .trademark {
             font-size: 1.25rem;
-            font-weight: bold;
+            font-weight: 700;
+        }
+        nav {
+            background: #0c47a1;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
+            justify-content: center;
         }
         nav ul li {
-            margin-left: 2rem;
+            margin: 0 1rem;
         }
         nav ul li a {
             color: #fff;
             text-decoration: none;
             font-size: 1rem;
+            font-weight: 500;
+            padding: 0.75rem 1rem;
+            display: block;
         }
         nav ul li a:hover {
-            text-decoration: underline;
+            background: #0056b3;
+            border-radius: 0.25rem;
         }
         section {
-            padding: 6rem 2rem 2rem;
+            padding: 8rem 2rem 4rem;
             min-height: 100vh;
             background-size: cover;
             background-position: center;
@@ -64,13 +74,13 @@
             scroll-snap-align: start;
             position: relative;
         }
-        section h2, section h3 {
+        section h2 {
             color: #fff;
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 0.5rem;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 0.75rem;
             border-radius: 0.5rem;
             text-align: center;
         }
@@ -92,15 +102,15 @@
             transition: all 0.3s ease;
         }
         .standard-list .column a:hover {
-            color: #0277bd;
-            border-bottom: 1px solid #0277bd;
+            color: #1a73e8;
+            border-bottom: 1px solid #1a73e8;
         }
         .content {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
             color: #333;
             padding: 2rem;
             border-radius: 0.5rem;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             position: relative;
             z-index: 1;
         }
@@ -112,20 +122,21 @@
             padding: 0.5rem 0;
         }
         .content ul li a {
-            color: #333;
+            color: #1a73e8;
             text-decoration: none;
             border-bottom: 1px solid #ccc;
             transition: all 0.3s ease;
         }
         .content ul li a:hover {
-            color: #0277bd;
-            border-bottom: 1px solid #0277bd;
+            color: #0056b3;
+            border-bottom: 1px solid #0056b3;
         }
         footer {
-            background: #0277bd;
+            background: #1a73e8;
             color: #fff;
             text-align: center;
             padding: 1rem 0;
+            margin-top: 2rem;
         }
         html, body {
             scroll-snap-type: y mandatory;
@@ -163,11 +174,65 @@
             <div class="trademark">KGGC</div>
         </div>
     </header>
+    <nav>
+        <ul>
+            <li><a href="#about">소개</a></li>
+            <li><a href="#blog">블로그</a></li>
+            <li><a href="#resources">자료실</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#services">서비스</a></li>
+            <li><a href="#testimonials">후기</a></li>
+            <li><a href="#contact">문의</a></li>
+            <li><a href="#seminars">교육 및 세미나</a></li>
+        </ul>
+    </nav>
     <div class="container main-content">
-        <section id="section1" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fit=crop&w=1080&q=80');">
+        <section id="about" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fit=crop&w=1080&q=80');">
             <div class="content">
-                <h2><a href="https://db.kasb.or.kr/standard/" style="color: #fff; text-decoration: underline;">기준서</a></h2>
-                <h2><a href="https://db.kasb.or.kr/qnas" style="color: #fff; text-decoration: underline;">질의회신</a></h2>
+                <h2>소개</h2>
+                <p>여기에 회계사 소개, 자격증, 경력 등을 포함합니다.</p>
+            </div>
+        </section>
+        <section id="blog">
+            <div class="content">
+                <h2>블로그</h2>
+                <p>업데이트된 회계 규정, 회계 팁, 사례 연구 등을 포함한 블로그 포스트.</p>
+            </div>
+        </section>
+        <section id="resources">
+            <div class="content">
+                <h2>자료실</h2>
+                <p>다양한 회계 양식 및 서식을 다운로드할 수 있는 자료실.</p>
+            </div>
+        </section>
+        <section id="faq">
+            <div class="content">
+                <h2>FAQ</h2>
+                <p>자주 묻는 질문과 답변을 정리해 놓은 섹션.</p>
+            </div>
+        </section>
+        <section id="services">
+            <div class="content">
+                <h2>서비스</h2>
+                <p>제공하는 서비스에 대한 상세 설명.</p>
+            </div>
+        </section>
+        <section id="testimonials">
+            <div class="content">
+                <h2>고객 후기</h2>
+                <p>고객들의 피드백과 성공 사례.</p>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="content">
+                <h2>문의 및 상담</h2>
+                <p>상담 예약 시스템, 온라인 상담 폼, 연락처 정보.</p>
+            </div>
+        </section>
+        <section id="seminars">
+            <div class="content">
+                <h2>교육 및 세미나</h2>
+                <p>회계 관련 온라인 교육, 세미나 일정 및 신청 방법.</p>
             </div>
         </section>
     </div>
